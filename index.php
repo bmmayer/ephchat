@@ -22,21 +22,18 @@ $anonName = AnonName($_SESSION['User']);
 <html>
 <head>
   <title>EphChat :: <?= $room; ?></title>
-  <link href="main.css" rel="stylesheet">
-  <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.17/firebase.js'></script>
+  <link href="main.css?r=<?= rand(); ?>" rel="stylesheet">
+  <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.17/firebase.js?r=<?= rand(); ?>'></script>
   <script>
 
   var mCounter = 1;
-  var messagesObj = new Firebase('https://ephemeralchat.firebaseio.com/rooms/<?= $room; ?>/messages');
-  var userObj = new Firebase('https://ephemeralchat.firebaseio.com/users/<?= $_SESSION['User']; ?>');
-  var connections = new Firebase('https://ephemeralchat.firebaseio.com/rooms/<?= $room; ?>/connections');
   var newName = "<?= $anonName; ?>";
   var currentSessionUserId = "<?= $_SESSION['User']; ?>";
-
-  userObj.onDisconnect().remove();
+  var roomStr = "<?= $room; ?>";
 
   </script>
-  <script type='text/javascript' src='chat.js'></script>
+  <script type='text/javascript' src='js/functions.js?r=<?= rand(); ?>'></script>
+  <script type='text/javascript' src='js/chat.js?r=<?= rand(); ?>'></script>
 </head>
 <body onload="loadDoc('<?= VERSION_NUMBER; ?>');">
   <div class="sidebar">
