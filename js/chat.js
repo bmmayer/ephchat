@@ -1,6 +1,6 @@
-var FBBase = 'https://ephemeralchat.firebaseio.com/rooms/';
-var messagesObj = new Firebase(FBBase+roomStr+'/messages');
-var userObj = new Firebase(FBBase+currentSessionUserId);
+var FBBase = 'https://ephemeralchat.firebaseio.com/';
+var messagesObj = new Firebase(FBBase+'rooms/'+roomStr+'/messages');
+var userObj = new Firebase(FBBase+'users/'+currentSessionUserId);
 var connections = new Firebase(FBBase+'rooms/'+roomStr+'/connections');
 var messageTimeout = 60000;
 
