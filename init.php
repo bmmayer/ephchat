@@ -19,9 +19,12 @@ include_once("functions.php");
 
 //Generate Session Username//
 
-
 if(!$_SESSION['User']){
     $_SESSION['User'] = session_id()."_".GenHash();
+}
+
+if (!isset($_SERVER['HTTPS']) && $_SERVER['SERVER_NAME'] != "localhost") {
+   header('Location: https://' . $_SERVER["SERVER_NAME"] . $_SERVER['REQUEST_URI']);
 }
 
 ?>
