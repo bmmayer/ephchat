@@ -32,7 +32,7 @@ userObj.on('value',function(snapshot){
 function loadDoc(version){
 	document.getElementById("chatText").focus();
 	console.log("Welcome to EphChat! Version "+version+".");
-	setTimeout(function(){removeMsg("welcome")},20000);
+	setTimeout(function(){removeMsg("welcome")},60000);
 }
 
 function fireChat(){
@@ -55,7 +55,7 @@ function addMessageToFlow(user,userId,message,msgId,callback){
 	newContent.innerHTML = "<div class='message' id='msg-"+msgId+"'><div class='user user-name-"+userId+"'>"+user+"</div><div class='text'>"+message+"</div></div>";
 	while (newContent.firstChild){
 		flow.appendChild(newContent.firstChild);
-		setTimeout(function(){removeMsg(msgId)},20000);
+		setTimeout(function(){removeMsg(msgId)},60000);
 	}
 	callback();
 }
