@@ -51,7 +51,7 @@ $anonName = AnonName($_SESSION['User']);
 
     <div class="welcome-msg message" id="msg-welcome">
       <div class="user">SysAdmin</div>
-      <div class="text">Welcome to <span style="color:red;font-weight:bold">EphChat</span>!  All messages vanish after 25 seconds.  No data stored on server.  Encrypted, anonymous communication.  Enjoy!</div>
+      <div class="text">Welcome to <span style="color:red;font-weight:bold">EphChat</span> (v. <?= VERSION_NUMBER; ?>).  All messages vanish after 25 seconds.  No data stored on server.  Encrypted, anonymous communication.  Code on <a href="https://github.com/bmmayer/ephchat">Github</a>.  Enjoy!</div>
     </div>
 
   </div>

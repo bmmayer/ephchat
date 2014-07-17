@@ -10,9 +10,9 @@ body {
 	left:0;
 	bottom:75px;
 	overflow:scroll;
-	padding-bottom:75px;
 	border-right:1px solid #dfdfdf;
 	border-bottom:1px solid #dfdfdf;
+	padding:10px 10px 75px 10px;
 }
 
 #flow .message {
