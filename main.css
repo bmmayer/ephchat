@@ -1,0 +1,99 @@
+body {
+	margin:0;
+	padding:0;
+}
+
+#flow {
+	position: absolute;
+	top:0;
+	right:200px;
+	left:0;
+	bottom:75px;
+	overflow:scroll;
+	padding-bottom:75px;
+	border-right:1px solid #dfdfdf;
+	border-bottom:1px solid #dfdfdf;
+}
+
+#flow .message {
+	clear:left;
+	padding:10px 0 0 10px;
+	-webkit-transition: opacity 5s ease-in;
+	-moz-transition: opacity 5s ease-in;
+	-o-transition: opacity 5s ease-in;
+}
+
+#flow .message.fade-out {
+	opacity:0;
+}
+
+#flow .message .user {
+	float:left;
+	font-weight:bold;
+	margin-right:10px;
+}
+
+.chat {
+	position:absolute;
+	height:75px;
+	right:200px;
+	bottom:0;
+	left:0;
+	background: #efefef;
+}
+
+.chat form {
+	margin:23px;
+	padding:0;
+}
+
+.chat #chatText {
+	padding-left:5px;
+	height:30px;
+	width:850px;
+}
+
+.chat button {
+	width:100px;
+	height:30px;
+}
+
+.sidebar {
+	background: #efefef;
+	position:absolute;
+	top:0;
+	right:0;
+	width:200px;
+	bottom:0;
+}
+
+.sidebar .user {
+	padding:10px;
+}
+
+.sidebar .user .user-in-list {
+	clear:both;
+}
+
+.sidebar .user .online-indicator {
+	float:left;
+	background:green;
+	width:10px;
+	height:10px;
+	margin:4px 10px 0;
+	border-radius:5px;
+}
+
+.sidebar .header {
+	padding:10px;	
+}
+
+.sidebar .header-text {
+	font-size:18px;
+	font-weight:bold;
+	margin-top:20px;
+}
+
+.sidebar .header-links {
+	text-align:center;
+}
