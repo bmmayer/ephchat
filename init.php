@@ -20,7 +20,7 @@ include_once("functions.php");
 //Generate Session Username//
 
 if(!$_SESSION['User']){
-    $_SESSION['User'] = session_id()."_".GenHash();
+    $_SESSION['User'] = session_id()."_".GenHash(true);
 }
 
 if (!isset($_SERVER['HTTPS']) && $_SERVER['SERVER_NAME'] != "localhost") {

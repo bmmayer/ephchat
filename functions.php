@@ -4,7 +4,7 @@ function charid(){
 	return strtoupper(md5(uniqid(rand(), true)));
 }
 
-function GenHash(){
+function GenHash($long=false){
 	mt_srand((double)microtime()*10000);
 	$hyphen = chr(45);
 	$uuid = substr($charid, 0, 8).$hyphen
@@ -12,7 +12,11 @@ function GenHash(){
 	.substr(charid(),12, 4).$hyphen
 	.substr(charid(),16, 4).$hyphen
 	.substr(charid(),20,12);
-	return substr(str_shuffle(hash("sha512",$uuid).strtoupper(session_id())),0,25);
+	if($long == true){
+		return str_shuffle(hash("sha512",$uuid).strtoupper(session_id()));
+	} else {
+		return substr(str_shuffle(hash("sha512",$uuid).strtoupper(session_id())),0,25);
+	}
 }
 
 function AnonName($string){
