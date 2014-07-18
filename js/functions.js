@@ -17,8 +17,11 @@ function fireChat(){
 		userName: userName,
 		userId: userId,
 		FBUserId: FBUserId,
-		RoomId: roomStr
+		RoomId: roomStr,
+		timestamp: Firebase.ServerValue.TIMESTAMP
 	});
+
+	console.log(Firebase.ServerValue.TIMESTAMP);
 
 	messagePoll.push({
 		messageId: newMsgId,

@@ -8,7 +8,7 @@
           },
           "messages": {
             "$any": {
-            ".write": "!newData.exists() || root.child('rooms').child(newData.child('RoomId').val()).child('connections').hasChild(newData.child('FBUserId').val())",
+            ".write": "!newData.exists() || root.child('rooms').child(newData.child('RoomId').val()).child('connections').hasChild(newData.child('FBUserId').val()) && now > (root.child('rooms').child(newData.child('RoomId').val()).child('connections').child(newData.child('FBUserId').val()).child('timestamp').val() + 500)",
             ".validate": "newData.hasChildren(['RoomId','FBUserId','userName','userId','message']) && newData.child('message').val().length >= 1",
             ".read": "root.child('rooms').child(data.child('RoomId').val()).child('connections').hasChild(data.child('FBUserId').val())"
             }
