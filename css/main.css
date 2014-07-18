@@ -3,6 +3,14 @@ body {
 	padding:0;
 }
 
+a, a:visited {
+	color:#0000EE;
+}
+
+a:hover {
+	text-decoration:none;
+}
+
 /* Flow */
 
 #flow {
