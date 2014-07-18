@@ -1,6 +1,6 @@
 <?php
 
-include_once("init.php");
+include_once("php/init.php");
 
 if($_GET['regenerate'] == "true"){
 	resetSession();
@@ -22,7 +22,7 @@ $anonName = AnonName($_SESSION['User']);
 <html>
 <head>
 	<title>EphChat :: <?= $room; ?></title>
-	<link href="main.css?r=<?= rand(); ?>" rel="stylesheet">
+	<link href="css/main.css?r=<?= rand(); ?>" rel="stylesheet">
 	<script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.17/firebase.js?r=<?= rand(); ?>'></script>
 	<script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.6.1/firebase-simple-login.js?r=<?= rand(); ?>'></script>
 	<script>
