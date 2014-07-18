@@ -2,7 +2,7 @@
 
 //Version Number//
 
-define("VERSION_NUMBER","0.1.1b");
+define("VERSION_NUMBER","0.1.2b");
 
 //Start Session//
 
