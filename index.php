@@ -44,7 +44,7 @@ $anonName = AnonName($_SESSION['User']);
 <body onload="loadDoc('<?= VERSION_NUMBER; ?>');">
 	<div class="sidebar">
 		<div class="header">
-			<div class="header-links">[<a href=".?regenerate=true&r=<?= $room; ?>">regen session</a>] [<a href="javascript:nameChange();">change name</a>] [<a href=".">new room</a>]</div>
+			<div class="header-links">[<a href=".?regenerate=true&r=<?= $room; ?>">regen session</a>] [<a href="javascript:nameChange();">change name</a>] [<a href=".">new room</a>] [<a href="public">public</a>]</div>
 			<div class="header-text">users online</div>
 		</div>
 		<div class="user" id="user-list">
