@@ -13,7 +13,7 @@ function fireChat(){
 	mCounter++;
 
 	messagesObj.child(newMsgId).set({
-		message: msg,
+		message: htmlentities(msg),
 		userName: userName,
 		userId: userId,
 		FBUserId: FBUserId,
@@ -61,7 +61,7 @@ function nameChange(){
 	newName = prompt("New Name","Bob");
 	if(newName != null){
 		FBConnection.update({
-			userName: newName
+			userName: htmlentities(newName)
 		});
 	}
 	focusChat();

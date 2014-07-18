@@ -69,5 +69,7 @@ $anonName = AnonName($_SESSION['User']);
 			<button disabled id="chatButton" type="submit">Chat</button>
 		</form>
 	</div>
+	<script type="text/javascript" src="js/lib/get_html_translation_table.js?r=<?= rand(); ?>"></script>
+	<script type="text/javascript" src="js/lib/htmlentities.js?r=<?= rand(); ?>"></script>
 </body>
 </html>
