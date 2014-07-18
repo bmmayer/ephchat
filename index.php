@@ -63,7 +63,7 @@ $anonName = AnonName($_SESSION['User']);
 			<input type="text" id="chatText" />
 			<input type="hidden" id="userName" value="<?= $anonName; ?>" />
 			<input type="hidden" id="userId" value="<?= $_SESSION['User']; ?>" />
-			<button type="submit">Chat</button>
+			<button disabled id="chatButton" type="submit">Chat</button>
 		</form>
 	</div>
 </body>

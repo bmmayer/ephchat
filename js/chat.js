@@ -79,4 +79,6 @@ var auth = new FirebaseSimpleLogin(loginFB,function(error,user){
 		}
 	});
 
+	document.getElementById("chatButton").disabled = false;
+
 });

@@ -1,5 +1,5 @@
 function loadDoc(version){
-	document.getElementById("chatText").focus();
+	focusChat();
 	console.log("Welcome to EphChat! Version "+version+".");
 	setTimeout(function(){removeMsg("welcome")},messageTimeout);
 }
@@ -26,7 +26,7 @@ function fireChat(){
 	});
 
 	document.getElementById("chatText").value = "";
-	document.getElementById("chatText").focus();
+	focusChat();
 	return false;
 }
 
@@ -57,6 +57,10 @@ function nameChange(){
 			userName: newName
 		});
 	}
+	focusChat();
+}
+
+function focusChat(){
 	document.getElementById("chatText").focus();
 }
 
