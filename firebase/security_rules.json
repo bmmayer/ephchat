@@ -1,0 +1,23 @@
+{
+    "rules": {
+      "rooms": {
+        "$RoomId": {
+          "connections": {
+              ".read": true,
+              ".write": "auth.username == newData.child('FBUserId').val()"
+          },
+          "messages": {
+            "$any": {
+            ".write": "!newData.exists() || root.child('rooms').child(newData.child('RoomId').val()).child('connections').hasChild(newData.child('FBUserId').val())",
+            ".validate": "newData.hasChildren(['RoomId','FBUserId','userName','userId','message']) && newData.child('message').val().length >= 1",
+            ".read": "root.child('rooms').child(data.child('RoomId').val()).child('connections').hasChild(data.child('FBUserId').val())"
+            }
+          },
+          "poll": {
+            ".write": "auth.username == newData.child('FBUserId').val()",
+            ".read": true
+          }
+        }
+      }
+    }
+}
