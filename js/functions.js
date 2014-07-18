@@ -21,8 +21,6 @@ function fireChat(){
 		timestamp: Firebase.ServerValue.TIMESTAMP
 	});
 
-	console.log(Firebase.ServerValue.TIMESTAMP);
-
 	messagePoll.push({
 		messageId: newMsgId,
 		FBUserId: FBUserId
@@ -42,6 +40,12 @@ function addMessageToFlow(user,userId,message,msgId,callback){
 		setTimeout(function(){removeMsg(msgId)},messageTimeout);
 	}
 	callback();
+}
+
+function updateConnectionTimestamp(){
+	FBConnection.update({
+		timestamp: Firebase.ServerValue.TIMESTAMP
+	});
 }
 
 function removeMsg(msgId){

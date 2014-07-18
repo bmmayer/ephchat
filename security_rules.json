@@ -8,13 +8,13 @@
           },
           "messages": {
             "$any": {
-            ".write": "!newData.exists() || root.child('rooms').child(newData.child('RoomId').val()).child('connections').hasChild(newData.child('FBUserId').val()) && now > (root.child('rooms').child(newData.child('RoomId').val()).child('connections').child(newData.child('FBUserId').val()).child('timestamp').val() + 500)",
+            ".write": "!newData.exists() || root.child('rooms').child(newData.child('RoomId').val()).child('connections').hasChild(newData.child('FBUserId').val()) && now > (root.child('rooms').child(newData.child('RoomId').val()).child('connections').child(newData.child('FBUserId').val()).child('timestamp').val() + 1000)",
             ".validate": "newData.hasChildren(['RoomId','FBUserId','userName','userId','message']) && newData.child('message').val().length >= 1",
             ".read": "root.child('rooms').child(data.child('RoomId').val()).child('connections').hasChild(data.child('FBUserId').val())"
             }
           },
           "poll": {
-            ".write": "auth.username == newData.child('FBUserId').val()",
+            ".write": "auth.username == newData.child('FBUserId').val() && now > (root.child('rooms').child(newData.child('RoomId').val()).child('connections').child(newData.child('FBUserId').val()).child('timestamp').val() + 1000)",
             ".read": true
           }
         }

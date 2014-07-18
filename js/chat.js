@@ -26,11 +26,9 @@ var auth = new FirebaseSimpleLogin(loginFB,function(error,user){
 	messagePoll.on('child_added',function(snapshot){
 		var pollMsgId = snapshot.val().messageId;
 		messagesObj.child(pollMsgId).once('value',function(snapshot){
-			FBConnection.update({
-				timestamp: Firebase.ServerValue.TIMESTAMP
-			});
 			var msg = snapshot.val();
 			addMessageToFlow(msg.userName,msg.userId,msg.message,pollMsgId,function(){
+				updateConnectionTimestamp();
 				scrollToBottom();
 			});
 			messagesObj.child(pollMsgId).remove();
