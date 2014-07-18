@@ -12,7 +12,7 @@ function GenHash(){
 	.substr(charid(),12, 4).$hyphen
 	.substr(charid(),16, 4).$hyphen
 	.substr(charid(),20,12);
-	return str_shuffle(hash("sha512",$uuid).strtoupper(session_id()));
+	return substr(str_shuffle(hash("sha512",$uuid).strtoupper(session_id())),0,25);
 }
 
 function AnonName($string){
