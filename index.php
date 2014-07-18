@@ -54,7 +54,7 @@ $anonName = AnonName($_SESSION['User']);
 
 		<div class="welcome-msg message" id="msg-welcome">
 			<div class="user">SysAdmin</div>
-			<div class="text">Welcome to <span style="color:red;font-weight:bold">EphChat</span> (v. <?= VERSION_NUMBER; ?>).  All messages are deleted server-side immediately; client-side after 60 seconds.  No data stored on server.  Encrypted, anonymous communication.  Code on <a href="https://github.com/bmmayer/ephchat">Github</a>.  Enjoy!</div>
+			<div class="text">Welcome to <span style="color:red;font-weight:bold">EphChat</span> (v. <?= VERSION_NUMBER; ?>).  All messages are deleted server-side immediately; client-side after 60 seconds.  No data stored on server.  Encrypted, anonymous communication.<br /><ul><li>Any string in URL can be used to create a new chatroom: <a href="public">/public</a>, <a href="geek">/geek</a>, <a href="revolution">/revolution</a>, etc</li><li>Generate a random hash-named chatroom by clicking [<a href=".">new room</a>]</li><li>Change your username by clicking [<a href="javascript:nameChange();">change name</a>]</ul>Repository on <a href="https://github.com/bmmayer/ephchat">Github</a>.  Enjoy!</div>
 		</div>
 
 	</div>
