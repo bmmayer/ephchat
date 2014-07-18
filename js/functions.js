@@ -8,11 +8,23 @@ function fireChat(){
 	var msg = document.getElementById("chatText").value;
 	var userName = document.getElementById("userName").value;
 	var userId = document.getElementById("userId").value;
-	messagesObj.push({
+
+	var newMsgId = mCounter + "_" + currentSessionUserId;
+	mCounter++;
+
+	messagesObj.child(newMsgId).set({
 		message: msg,
 		userName: userName,
-		userId: userId
+		userId: userId,
+		FBUserId: FBUserId,
+		RoomId: roomStr
 	});
+
+	messagePoll.push({
+		messageId: newMsgId,
+		FBUserId: FBUserId
+	});
+
 	document.getElementById("chatText").value = "";
 	document.getElementById("chatText").focus();
 	return false;
@@ -41,8 +53,8 @@ function removeMsg(msgId){
 function nameChange(){
 	newName = prompt("New Name","Bob");
 	if(newName != null){
-		userObj.update({
-			name: newName
+		FBConnection.update({
+			userName: newName
 		});
 	}
 	document.getElementById("chatText").focus();

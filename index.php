@@ -24,12 +24,18 @@ $anonName = AnonName($_SESSION['User']);
 	<title>EphChat :: <?= $room; ?></title>
 	<link href="main.css?r=<?= rand(); ?>" rel="stylesheet">
 	<script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.17/firebase.js?r=<?= rand(); ?>'></script>
+	<script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.6.1/firebase-simple-login.js?r=<?= rand(); ?>'></script>
 	<script>
 
+	var newMsgId;
 	var mCounter = 1;
+	var FBUserId;
 	var newName = "<?= $anonName; ?>";
 	var currentSessionUserId = "<?= $_SESSION['User']; ?>";
 	var roomStr = "<?= $room; ?>";
+	var messageTimeout = 60000;
+	var con;
+	var FBConnection;
 
 	</script>
 	<script type='text/javascript' src='js/functions.js?r=<?= rand(); ?>'></script>
