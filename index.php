@@ -4,21 +4,21 @@ include_once("php/init.php");
 
 if($_GET['regenerate'] == "true"){
 	resetSession();
-	if($_GET['r']){
-		header("Location: ".$_GET['r']);
+	if(no_xss($_GET['r'])){
+		header("Location: ".no_xss($_GET['r']));
 		die();
 	}
 }
 
-if(!$_GET['room'] && $_GET['hash'] == "true"){
+if(!no_xss($_GET['room']) && $_GET['hash'] == "true"){
 	header("Location: ".GenHash());
 	die();
-} else if(!$_GET['room']){
+} else if(!no_xss($_GET['room'])){
 	header("Location: public");
 	die();
 }
 
-$room = $_GET['room'];
+$room = no_xss($_GET['room']);
 $anonName = AnonName($_SESSION['User']);
 
 ?>

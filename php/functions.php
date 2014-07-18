@@ -28,4 +28,9 @@ function resetSession(){
 	unset($_SESSION['User']);
 }
 
+
+function no_xss($str){ // from github/sarciszewski
+    return htmlentities( preg_replace("/[^A-Za-z0-9]/", '', $str), ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+}
+
 ?>
