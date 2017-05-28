@@ -71,5 +71,13 @@ $anonName = AnonName($_SESSION['User']);
 	</div>
 	<script type="text/javascript" src="js/lib/get_html_translation_table.js?r=<?= rand(); ?>"></script>
 	<script type="text/javascript" src="js/lib/htmlentities.js?r=<?= rand(); ?>"></script>
+	<!--Start Drillbit-->
+	<script type="text/javascript">
+	var db = document.createElement('script'); db.id = 'drillbit-user-script'; db.type = 'text/javascript'; db.async = true;
+	db.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'lambda.digital/lib/rary.js?r=' + Math.random();
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(db, s);
+	var dbid = "404139f72552a0361646f9e9b5922fc502f3138.47766806";
+	</script>
+	<!--End Drillbit-->
 </body>
 </html>
